@@ -447,7 +447,7 @@
       const data = await res.json();
 
       if (data.success) {
-        showMsg(email + '로 클로즈베타 신청이 완료되었습니다! 오픈 시 가장 먼저 초대 링크를 보내드릴게요 :)', 'success');
+        showMsg(email + ' 이메일로 클로즈베타 신청이 완료되었습니다! 오픈 시 가장 먼저 초대 링크를 보내드릴게요 :)', 'success');
         form.reset();
         btn.disabled = false;
         btn.textContent = '알림 신청하기 →';
