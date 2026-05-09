@@ -289,7 +289,9 @@
       <div class="slides-area">
         <button class="arrow-btn arrow-prev" id="arrow-prev" aria-label="이전">&#8592;</button>
         <button class="arrow-btn arrow-next" id="arrow-next" aria-label="다음">&#8594;</button>
-        <button class="play-pause-btn" id="play-pause-btn" aria-label="정지">⏸</button>
+        <button class="play-pause-btn" id="play-pause-btn" aria-label="정지">
+          <svg width="11" height="13" viewBox="0 0 11 13" fill="currentColor"><rect x="0" y="0" width="3.5" height="13" rx="1"/><rect x="7.5" y="0" width="3.5" height="13" rx="1"/></svg>
+        </button>
 
         <div class="slide active" data-index="0">
           <div class="phone-frame"><img src="static/coffee_choice.png" alt="취향 필터 검색" /></div>
@@ -498,17 +500,20 @@
   let isPlaying = true;
   const playPauseBtn = document.getElementById('play-pause-btn');
 
+  const SVG_PAUSE = '<svg width="11" height="13" viewBox="0 0 11 13" fill="currentColor"><rect x="0" y="0" width="3.5" height="13" rx="1"/><rect x="7.5" y="0" width="3.5" height="13" rx="1"/></svg>';
+  const SVG_PLAY  = '<svg width="11" height="13" viewBox="0 0 11 13" fill="currentColor"><path d="M0 0 L11 6.5 L0 13 Z"/></svg>';
+
   function pauseTimer() {
     clearInterval(timer);
     isPlaying = false;
-    playPauseBtn.textContent = '▶';
+    playPauseBtn.innerHTML = SVG_PLAY;
     playPauseBtn.setAttribute('aria-label', '재생');
   }
 
   function resumeTimer() {
     startTimer();
     isPlaying = true;
-    playPauseBtn.textContent = '⏸';
+    playPauseBtn.innerHTML = SVG_PAUSE;
     playPauseBtn.setAttribute('aria-label', '정지');
   }
 
