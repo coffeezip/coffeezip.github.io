@@ -237,25 +237,26 @@
     /* ── 재생/정지 버튼 ── */
     .play-pause-btn {
       position: absolute;
-      top: calc(50% + 28px);
+      bottom: 20px;
       right: 16px;
       z-index: 10;
       background: rgba(255,255,255,0.1);
       border: 1px solid rgba(255,255,255,0.2);
       backdrop-filter: blur(6px);
-      color: rgba(255,255,255,0.7);
-      width: 28px; height: 28px;
+      color: rgba(255,255,255,0.85);
+      width: 36px; height: 36px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      font-size: 10px;
-      transition: background 0.2s, color 0.2s;
+      font-size: 14px;
+      transition: background 0.2s, transform 0.15s;
       user-select: none;
       padding: 0;
     }
-    .play-pause-btn:hover { background: rgba(255,255,255,0.2); color: rgba(255,255,255,0.95); }
+    .play-pause-btn:hover { background: rgba(255,255,255,0.2); transform: scale(1.08); }
+    .play-pause-btn:active { transform: scale(0.95); }
 
     /* ── 모바일 ── */
     @media (max-width: 700px) {
